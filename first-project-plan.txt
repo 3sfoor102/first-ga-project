@@ -12,3 +12,8 @@ User Stories:
 - The user can see if they lost the round
 - The user can start a new round
 
+Other Additions:
+- Sound effects during win or lose
+- Calm music during game progress
+- Click sound effects
+- New word pop-up sound effects
