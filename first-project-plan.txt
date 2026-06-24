@@ -1,0 +1,14 @@
+- The game: Concentration (memory game)
+
+- Variables: CurrentPlayer, Win, gameTimeout
+- Data structures: hold a set of items, either letters, shapes, or images, etc. 
+- Functions: initiation, checking player status
+
+ 
+User Stories: 
+- The user can start the game by clicking on the letters
+- The User can try a specific number of attempts (e.g., 5 - 7)
+- The user can see if he guessed the correct words
+- The user can see if they lost the round
+- The user can start a new round
+
