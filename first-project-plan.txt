@@ -17,3 +17,5 @@ Other Additions:
 - Calm music during game progress
 - Click sound effects
 - New word pop-up sound effects
+- Using my voiceover for some of the sound effects to make it funkier.
+- Using my own images 
