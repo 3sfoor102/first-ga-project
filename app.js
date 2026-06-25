@@ -8,13 +8,21 @@
 // I need to create a list of words, to compare the
 // current word the user trying to guess and the actual word
 let wordList = ['apple', 'orange', 'banana', 'mango', 'watermelon', 'grape', 'cherry', 'Strawberry']
-let guessedWord = ['a','p','p','l','e'] // maybe I need to define it inside a specific function to avoid saving globally
+let guessedWord = [] // maybe I need to define it inside a specific function to avoid saving globally
 let savedWord = ['apple'] //[randomWord(wordList)] // this variable saves the result of the randomWord() and it saves it specifically in an array, so it can be compared later on
-
-
+let correctLetter = false
+let allKeboardKeys = []
+let pressedKey = ['e']
 
 
 /*------------------------ Cached Element References ------------------------*/
+lettersBtns = document.querySelectorAll('.letters')
+console.log(lettersBtns[3].textContent)
+lettersBtns.forEach(function (item){
+    console.log(item)
+})
+    lettersBtns.addEventListener('click')
+
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -36,15 +44,26 @@ function randomWord(listName){
 
 
 
+
 // I made a crucial logical error, where I wanted to check if the gussedWord array content is identical to the content of a specific random word, if it is I want it to print the letters of the gussedWord, however here I have added the randomWord function inside the loop itself, so, assuming the random word at first iteration is "apple" in the second iteration when the loop runs again the word will be already changed, since it is not saved, it is just calling the function each time I run the loop, for example, it might pick another word from the array list like "mango"
-for (let i = 0; guessedWord.length; i++){
-    for (let j=0; j<guessedWord[i].length; j++)
-    {
-        // console.log(guessedWord[i])
-        console.log(savedWord[i][j])
+
+for (let i =0; i<savedWord.length;i++)
+{
+    for (let j=0; j<savedWord[i].length; j++)
+        if (savedWord[i][j]=== pressedKey[i])
+        guessedWord.push(savedWord[i][j])
+        console.log(guessedWord[i])
+
+}
+
+// for (let i = 0; guessedWord.length; i++){
+//     for (let j=0; j<guessedWord[i].length; j++)
+//     {
+//         // console.log(guessedWord[i])
+//         console.log(savedWord[i][j])
         
-        }
-        // guessedWord[i].push(j)
-    }
+//         }
+//         // guessedWord[i].push(j)
+//     }
 
 
