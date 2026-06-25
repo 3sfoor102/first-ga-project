@@ -9,12 +9,9 @@
 // current word the user trying to guess and the actual word
 let wordList = ['apple', 'orange', 'banana', 'mango', 'watermelon', 'grape', 'cherry', 'Strawberry']
 let guessedWord = ['a','p','p','l','e'] // maybe I need to define it inside a specific function to avoid saving globally
-let savedWord = [randomWord(wordList)] // this variable saves the result of the randomWord() and it saves it specifically in an array, so it can be compared later on
-console.log(savedWord)
+let savedWord = ['apple'] //[randomWord(wordList)] // this variable saves the result of the randomWord() and it saves it specifically in an array, so it can be compared later on
 
 
-
- 
 
 
 /*------------------------ Cached Element References ------------------------*/
@@ -40,14 +37,14 @@ function randomWord(listName){
 
 
 // I made a crucial logical error, where I wanted to check if the gussedWord array content is identical to the content of a specific random word, if it is I want it to print the letters of the gussedWord, however here I have added the randomWord function inside the loop itself, so, assuming the random word at first iteration is "apple" in the second iteration when the loop runs again the word will be already changed, since it is not saved, it is just calling the function each time I run the loop, for example, it might pick another word from the array list like "mango"
-for (let i = 0; i<wordList.length; i++){
-    for (let j=0; j<wordList[i].length; j++)
+for (let i = 0; guessedWord.length; i++){
+    for (let j=0; j<guessedWord[i].length; j++)
     {
-        if (guessedWord[i] === savedWord[i]){
-            // console.log(`Gussed letter is: ${guessedWord[i]}`)
+        // console.log(guessedWord[i])
+        console.log(savedWord[i][j])
+        
         }
-        // console.log(wordList[i][j])
         // guessedWord[i].push(j)
     }
-}
+
 
