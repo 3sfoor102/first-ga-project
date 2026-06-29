@@ -122,6 +122,8 @@ console.log(secretWordLettersArray)
 // If the letter is 'l', and the seceretWord is  apple, the letter should
 // be placed at index 3, and it showed be shown at index 3 in the screen
 
+// Add one image, and this image changes according to status, for example the first image with full body, the second image will replace the first image but with hand lost, etc.
+// 
 
 
 // =============================== PSEUDOCODE END =====================================
