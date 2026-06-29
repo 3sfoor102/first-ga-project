@@ -67,14 +67,14 @@ function randomWord(listName){
 // it is like we are typing wordList[0] (for example the result is "Mango"), instead of a fixed number now the random function will change this to different numbers for example (wordList[2], which will give "banana")
 }
 // console.log(randomWord(wordList))
-
 function createWordOutput () {
-    for (let i = 0; i < secretWord.length; i++) {
-        wordEls.textContent = '___'
-        ulEl.append(wordEls)
+    seprateSeceretLetters()
+    for (let i = 0; i < secretWordLettersArray.length; i++) {
+        ulEl.append(wordEls.textContent = '___ ')
     }
   
 }
+console.log(createWordOutput())
 
 // seprateSeceretLetters is used to seperate the full random word
 // and it saves each letter in it  
@@ -85,21 +85,14 @@ function seprateSeceretLetters () {
         }
     }
 }
-
-    seprateSeceretLetters()
-    console.log(secretWordLettersArray)
+    // console.log(secretWordLettersArray)
     console.log(secretWordLettersArray.length)
 
-let array = ["b",
-    "a",
-    "n",
-    "a",
-    "n",
-    "a"]
 
 
-// for (let i = 0; i < seprateSeceretLetters.length; i++) {
-//         if (secretWordLetters[i] === array[i]) {
+// this comparision is working, just replace userInput with the currenyUserLetter 
+// for (let i = 0; i < secretWordLettersArray.length; i++) {
+//         if (secretWordLettersArray[i] === userinput[i]) {
 //         console.log('true')
 
 //         }
