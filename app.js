@@ -9,7 +9,7 @@
 // current word the user trying to guess and the actual word
 let wordList = ['apple', 'orange', 'banana', 'mango', 'watermelon', 'grape', 'cherry', 'Strawberry']
 let guessedWord = [] // maybe I need to define it inside a specific function to avoid saving globally
-let secretWord = ['banana'] //[randomWord(wordList)] // this variable saves the result of the randomWord() and it saves it specifically in an array, so it can be compared later on
+let secretWord = ['apple'] //[randomWord(wordList)] // this variable saves the result of the randomWord() and it saves it specifically in an array, so it can be compared later on
 let pressedKey = ['a']
 let correctLetter = false
 let lives = 6
@@ -21,8 +21,9 @@ let secretWordLettersArray = []
 
 /*------------------------ Cached Element References ------------------------*/
 const lettersBtns = document.querySelectorAll('.letters')
-const ulEl = document.querySelector('.output')
-const wordEls = document.createElement('li')
+const ulDashesEl = document.querySelector('.output-dashes')
+const ulLettersEl = document.querySelector('.output-letters')
+const liEls = document.createElement('li')
 
 
 // This brings the keyboard letters from the html page
@@ -70,9 +71,15 @@ function randomWord(listName){
 function createWordOutput () {
     seprateSeceretLetters()
     for (let i = 0; i < secretWordLettersArray.length; i++) {
-        ulEl.append(wordEls.textContent = '___ ')
+        ulDashesEl.append(liEls.textContent = '___ ')
     }
-  
+
+    lettersBtns.forEach(function(button){
+    button.addEventListener('click', function(event){
+        ulLettersEl.append(liEls.textContent = event.target.textContent)
+    })
+})
+
 }
 console.log(createWordOutput())
 
@@ -125,6 +132,11 @@ function seprateSeceretLetters () {
 
 // console.log(secretWord[0][0])
 
-
+// working click and put letter to screen
+// lettersBtns.forEach(function(button){
+// button.addEventListener('click', function(event){
+//     ulLettersEl.append(liEls.textContent = event.target.textContent)
+//     })
+// })
 
 // ====================================================================

@@ -25,9 +25,8 @@ body {
     color: white ;
 }
 
-.output {
+.output-dashes, .output-letters {
     display: flex;
     list-style: none;
     justify-content: center;
-    
 }
