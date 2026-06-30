@@ -9,11 +9,16 @@ body, html {
 }
 
 h1 {
+    margin-bottom: 100px ;
     color: whitesmoke;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+.header-elements {
+
+}
+
 .keyboard-btns{
     color: white;
     display: flex;
@@ -33,12 +38,19 @@ h1 {
 }
 
 #reset-btn {
-    background: transparent;
+    background: rgb(51, 50, 50);
     border: 1px solid white;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
     color: white ;
+    border-radius: 100%;
+    width: 6dvh;
+    height: 6dvh;
+}
+#reset-btn:hover {
+background-color: rgba(255, 0, 0, 0.663);
+}
+
+.keyboard-btns :hover {
+    background-color: green;
 }
 
 .output-dashes, .output-letters {
@@ -51,15 +63,16 @@ h1 {
 display: flex;
 justify-content: center;
 align-items: center;
-max-width: 200px;
+max-width: 300px;
 width: 100%;
 margin: 0 auto;
+ 
 }
 .images img {
     width: 100%;
     height: auto;
     justify-content: block;
-    margin-bottom: 20px;
+    margin-bottom: 100px;   
 }
 .removeImage {
     display: none;
