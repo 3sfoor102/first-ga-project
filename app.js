@@ -67,14 +67,24 @@ function createWordOutput () {
     lettersBtns.forEach(function (button) {
         button.addEventListener('click', function (event) {
             for (let i = 0; i < secretWordLettersArray.length; i++) {
-                if (event.target.textContent === secretWordLettersArray[i] && event.target.textContent !== guessedWord[i] ) { // if the letter is correct and not in the "gussed word list at that specific index it will add it their"
-                    // ulLettersEl.append(divEl[i] = event.target.textContent + ' ')
+                if (event.target.textContent === secretWordLettersArray[i] && event.target.textContent) {
+                
+                    // if the letter is correct and not in the "gussed word list at that specific index it will add it their"
                     // where div element id is the same as the pushed letter (for example div id [1] === seceretWord [1] ... it should at the seceret word at 1 at the same place )
                     const pEl = document.createElement('p')
                     pEl.textContent = event.target.textContent
                     divsContainerEls[i].appendChild(pEl)
                     guessedWord.push(event.target.textContent)
+                    const DisableButton = event.target
+                    DisableButton.disabled = true
+
+                    console.log(DisableButton)
                     console.log(`Gussed Word Content: ${guessedWord}`) 
+                } else if (event.target.textContent !== secretWordLettersArray[i]) {
+                    console.log(lives)
+                    DisableButton = event.target
+                    DisableButton.disabled = true
+                    
                 }
             }
         }) 
