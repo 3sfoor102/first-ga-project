@@ -8,6 +8,8 @@
     // Add one image, and this image changes according to status, for example the first image with full body, the second image will replace the first image but with hand lost, etc.
     // Each wrong letter pressed will take a life from the user, using lives--
 
+// Win 
+    // if the user gussedWord === seceretWord && attempts 
 
 
 /*-------------------------------- Constants --------------------------------*/
@@ -32,6 +34,10 @@ const ulLettersEl = document.querySelector('.output-letters')
 const liEls = document.createElement('li')
 const imgEls = document.querySelector('.images')
 const divsContainerEl = document.querySelector('.divs-container')
+let divsContainerEls
+
+const pEl = document.createElement('p')
+
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -57,25 +63,32 @@ function createWordOutput () {
         const divEl = document.createElement('div')
         divsContainerEl.appendChild(divEl)
         divEl.id = [i]
+        divEl.classList = 'words-spaces'
     }
+    divsContainerEls = document.querySelectorAll('.words-spaces')
     lettersBtns.forEach(function (button) {
         button.addEventListener('click', function (event) {
             for (let i = 0; i < secretWordLettersArray.length; i++) {
-                if (event.target.textContent === secretWordLettersArray[i]) {
-                    ulLettersEl.append(liEls.textContent = event.target.textContent + ' ')
-                    console.log('GOOD')
+                if (event.target.textContent === secretWordLettersArray[i] && event.target.textContent !== guessedWord[i] ) { // if the letter is correct and not in the "gussed word list at that specific index it will add it their"
+                    // ulLettersEl.append(divEl[i] = event.target.textContent + ' ')
+                    // where div element id is the same as the pushed letter (for example div id [1] === seceretWord [1] ... it should at the seceret word at 1 at the same place )
+                    divsContainerEls[i].append(pEl.textContent = event.target.textContent)
+                    guessedWord.push(event.target.textContent)
+                    console.log(`Gussed Word Content: ${guessedWord}`) 
                 }
             }
-
-        })
+        }) 
     })
-}
 
+}
 
 
 // =============================== CONSOLE LOGS AND CALLING FUNCTIONS =====================================
 createWordOutput()
+// console.log(divsContainerEls)
 console.log(secretWordLettersArray)
+
+
 
 // =======================================================================================
 
