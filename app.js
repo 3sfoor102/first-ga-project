@@ -36,8 +36,6 @@ const imgEls = document.querySelector('.images')
 const divsContainerEl = document.querySelector('.divs-container')
 let divsContainerEls
 
-const pEl = document.createElement('p')
-
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -72,7 +70,9 @@ function createWordOutput () {
                 if (event.target.textContent === secretWordLettersArray[i] && event.target.textContent !== guessedWord[i] ) { // if the letter is correct and not in the "gussed word list at that specific index it will add it their"
                     // ulLettersEl.append(divEl[i] = event.target.textContent + ' ')
                     // where div element id is the same as the pushed letter (for example div id [1] === seceretWord [1] ... it should at the seceret word at 1 at the same place )
-                    divsContainerEls[i].append(pEl.textContent = event.target.textContent)
+                    const pEl = document.createElement('p')
+                    pEl.textContent = event.target.textContent
+                    divsContainerEls[i].appendChild(pEl)
                     guessedWord.push(event.target.textContent)
                     console.log(`Gussed Word Content: ${guessedWord}`) 
                 }
