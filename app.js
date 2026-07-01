@@ -21,7 +21,51 @@
 /*-------------------------------- Constants --------------------------------*/
 
 /*-------------------------------- Variables --------------------------------*/
-let wordList = ['apple', 'orange', 'banana', 'mango', 'watermelon', 'grape', 'cherry', 'strawberry']
+let wordList = [
+  "apple",
+  "banana",
+  "orange",
+  "grape",
+  "strawberry",
+  "watermelon",
+  "lemon",
+  "peach",
+  "cherry",
+  "pear",
+  "pineapple",
+  "mango",
+  "blueberry",
+  "kiwi",
+  "plum",
+  "cantaloupe",
+  "grapefruit",
+  "coconut",
+  "raspberry",
+  "blackberry",
+  "lime",
+  "apricot",
+  "nectarine",
+  "pomegranate",
+  "avocado",
+  "papaya",
+  "guava",
+  "honeydew",
+  "fig",
+  "date",
+  "tangerine",
+  "cranberry",
+  "passionfruit",
+  "lychee",
+  "dragonfruit",
+  "mandarin",
+  "clementine",
+  "melon",
+  "kumquat",
+  "mulberry",
+  "gooseberry",
+  "elderberry",
+  "boysenberry",]
+
 let secretWord = [randomWord(wordList)]
 let gussedWord = []
 let secretWordLettersArray = []
@@ -38,11 +82,14 @@ const lettersBtns = document.querySelectorAll('.letters')
 // const ulLettersEl = document.querySelector('.output-letters')
 // const liEls = document.createElement('li')
 const imgEls = document.querySelector('.images')
+const currentHangmanImg = document.querySelector('#hangman-image') 
 const divsContainerEl = document.querySelector('.divs-container')
 const resetEl = document.querySelector('#reset-btn')
+const attemptsText = document.querySelector('#attempts-title')
 let divsContainerEls
 
 
+console.log(lettersBtns)
 /*----------------------------- Event Listeners -----------------------------*/
 
 
@@ -71,6 +118,7 @@ function createWordOutput() {
     }
 
     divsContainerEls = document.querySelectorAll('.words-spaces')
+    currentHangmanImg.src = 'assets/images/hangman-image-0'+lives+'.png'
 
     lettersBtns.forEach(function (button) {
         button.addEventListener('click', function (event) {
@@ -91,26 +139,30 @@ function createWordOutput() {
 
                     foundLetter = true
                     winCheck()
-
-
                 } 
 
-            } if (foundLetter === false && lives>0) {
+            } if (foundLetter === false && lives>1) {
+                currentHangmanImg.src = 'assets/images/hangman-image-0'+lives+'.png'
                     lives--
+                    attemptsText.textContent = `${lives} attempts left!`
                     console.log(lives)
                     DisableButton = event.target
                     DisableButton.disabled = true
                     
 
-                } else if (lives === 0) {        
-                    console.log('You Lose!')
+                } else if (lives === 1) {        
+                    attemptsText.textContent = `You Lose!`
+                    for (let i = 0; i < lettersBtns.length; i++) {
+                        console.log(lettersBtns[i])
+                        lettersBtn[i].disabled = true
+                    }
                     //disable all buttons and make them red
                 }
         })
     })
 
 }
-
+console.log(lettersBtns.length)
 function winCheck() {
 
     if (gussedWord.length === secretWordLettersArray.length) {
@@ -118,13 +170,15 @@ function winCheck() {
     } 
 }
 function reset() {
-    console.log('HELLPW')
-    secretWord = [randomWord(wordList)]
-    createWordOutput()
-    console.log(secretWord + 'test')
-    secretWordLettersArray = []
-    winner = false
-    lives = 6
+    // console.log('HELLPW')
+    // secretWord = [randomWord(wordList)]
+    // // it is good
+    // createWordOutput()
+    // console.log(secretWord + ' secret word test in RESET')
+    // secretWordLettersArray = []
+    // winner = false
+    // lives = 6
+window.location.reload();
 }
 
 // =============================== CONSOLE LOGS AND CALLING FUNCTIONS =====================================

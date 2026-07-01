@@ -5,7 +5,16 @@ body, html {
     /* display: flex; */
     height: 100%;
     margin: 0;
-    background-color: rgba(0, 0, 0, 0.74)
+    background-image: url('assets/images/Hangman-texture-background-image.png');
+    background-color: rgba(0, 0, 0, 0.74);
+
+        background-size: contain; 
+        background-repeat: no-repeat; 
+        background-position: center center; 
+        background-attachment: fixed; 
+        background-color: #121820;
+        min-height: 100vh; 
+        margin: 0;
 }
 
 h1 {
@@ -14,6 +23,13 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+#attempts-title {
+color: whitesmoke;  
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: -80px;
 }
 .header-elements {
 
@@ -75,7 +91,6 @@ margin: 0 auto;
     margin-bottom: 100px;   
 }
 .images :hover {
-    width: 170%;
     height: auto;
     justify-content: block;
 }
