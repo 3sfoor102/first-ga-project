@@ -118,6 +118,11 @@ function createWordOutput() {
     divsContainerEls = document.querySelectorAll('.words-spaces')
     currentHangmanImg.src = 'assets/images/hangman-image-0'+lives+'.png'
 
+
+    document.addEventListener('keydown', function(event){
+        console.log('keyboard')
+    })
+
     lettersBtns.forEach(function (button) {
         button.addEventListener('click', function (event) {
 
@@ -152,7 +157,8 @@ function createWordOutput() {
                     attemptsText.textContent = `You Lose!`
                     for (let i = 0; i < lettersBtns.length; i++) {
                         console.log(lettersBtns[i])
-                        lettersBtn[i].disabled = true
+                        lettersBtns[i].disabled = true
+                        // here add the 
                     }
                     //disable all buttons and make them red
                 }
@@ -171,14 +177,26 @@ function winCheck() {
 function reset() {
     window.location.reload();
 }
-function addAudio(audioName, audioPath) {
-    const audioName = new Audio(audioPath)
-    audioName.volume = .05
-    audioName.play()
-}
 
-console.log(addAudio(backgroundMusic, 'assets/audio/hangman-background-music-audio.mp3'))
-backgroundMusic.loop = true
+// function addAudio(audioName, audioPath) {
+//     const audioName = new Audio(audioPath)
+//     audioName.volume = .05
+//     audioName.play()
+// }
+
+// function audioUp(){
+//     volume = volume +10
+// }
+
+// function audioDown(){
+//     volume = volume -10
+// }
+// function mute(){
+//     volume = 0
+// }
+
+// console.log(addAudio(backgroundMusic, 'assets/audio/hangman-background-music-audio.mp3'))
+// backgroundMusic.loop = true
 
 
 
