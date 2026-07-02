@@ -2,9 +2,7 @@
 
 A simple game to add excitment and challgene in your way to guess random words! 
 
-Add a game screenshot --> In the assets folder
-
-![hangman](assets/images/hangman-image-01.png)
+![spaceman-image](image.png)
 
 ## Getting Started 
 
@@ -12,11 +10,10 @@ Add a game screenshot --> In the assets folder
 [Deployed Game](https://3sfoor102.github.io/spaceman-game/)
 
 ### How to Play
-1. Click on letter to start your attempts 
-2. C
-
-
-5. Click Restart 
+1. Click or press any button to start  
+2. Try to guess the secret word
+3. Look at your attempts to avoid losing
+4. If the round ended click restart icon to play again 
 
 
 ### Installation 
@@ -41,4 +38,4 @@ open index.html
   
 
 ### Credits
-- Thanks to my GA instructor, and to my GA instructors associates 
+- Credits goes to my GA instructor, and to my GA instructors associates 
