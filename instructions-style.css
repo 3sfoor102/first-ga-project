@@ -1,0 +1,36 @@
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        background-image: url('assets/images/Instructions-image.png');
+        background-size: contain; 
+        background-repeat: no-repeat; 
+        background-position: center center; 
+        background-attachment: fixed; 
+        background-color: #121820;
+        min-height: 100vh; 
+        margin: 0;
+    }
+
+#start-btn {
+background-color: #888c8e;
+color: white;
+font-size: 40px;
+position: absolute;
+bottom: 90px;
+left: 0;
+right: 0;
+width: fit-content;
+height: fit-content;
+margin: auto;
+
+}
+
+a:visited {
+    text-decoration: none;
+    color: white
+}
+a {
+    text-decoration: none;
+}

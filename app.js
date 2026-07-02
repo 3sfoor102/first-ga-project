@@ -19,6 +19,7 @@
 // Reset music and all sounds if needed
 
 /*-------------------------------- Constants --------------------------------*/
+const backgroundMusic = addAudio('assets/audio/hangman-background-music-audio.mp3')
 
 /*-------------------------------- Variables --------------------------------*/
 let wordList = [
@@ -75,7 +76,6 @@ let winner = false
 let lives = 6
 
 
-
 /*------------------------ Cached Element References ------------------------*/
 const lettersBtns = document.querySelectorAll('.letters')
 // const ulDashesEl = document.querySelector('.output-dashes')
@@ -122,9 +122,12 @@ function createWordOutput() {
 
 
     document.addEventListener('keydown', function(event){
+        backgroundMusic.play()
+
         const pressedLetter = event.key.toLowerCase();
         
         lettersBtns.forEach(function (button) {
+            
             if(button.textContent.toLowerCase() === pressedLetter && !button.disabled) {
                 button.click()
             }
@@ -134,6 +137,8 @@ function createWordOutput() {
 
     lettersBtns.forEach(function (button) {
         button.addEventListener('click', function (event) {
+                      backgroundMusic.play()
+            
 
             let foundLetter = false
 
@@ -191,14 +196,19 @@ function winCheck() {
 }
 
 function reset() {
-    window.location.reload();
+    window.location.reload();    
 }
 
-// function addAudio(audioName, audioPath) {
-//     const audioName = new Audio(audioPath)
-//     audioName.volume = .05
-//     audioName.play()
-// }
+function addAudio(audioPath) {
+    const audio = new Audio(audioPath)
+    audio.volume = .05
+    return audio
+}
+
+
+
+
+// backgroundMusic.loop = true
 
 // function audioUp(){
 //     volume = volume +10
@@ -211,8 +221,7 @@ function reset() {
 //     volume = 0
 // }
 
-// console.log(addAudio(backgroundMusic, 'assets/audio/hangman-background-music-audio.mp3'))
-// backgroundMusic.loop = true
+
 
 
 

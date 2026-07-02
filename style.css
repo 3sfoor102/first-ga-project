@@ -142,3 +142,22 @@ margin: 0 auto;
     display: block;
 }
 
+#info-btn {
+    background: rgb(51, 50, 50);
+    border: 1px solid white;
+    color: white ;
+    border-radius: 100%;
+    width: 6dvh;
+    height: 6dvh;
+
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+a:visited {
+    text-decoration: none;
+    color: white
+}
+a {
+    text-decoration: none;
+}
