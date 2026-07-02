@@ -7,6 +7,7 @@ const buttonClickSound = addAudio('assets/audio/button-click-audio.mp3')
 const buttonClickdWrongSound = addAudio('assets/audio/button-clickd-wrong-audio.mp3')
 const loseSound = addAudio('assets/audio/lose-sound.mp3')
 
+
 /*-------------------------------- Variables --------------------------------*/
 let wordList = [
   "apple",
@@ -69,9 +70,10 @@ const currentHangmanImg = document.querySelector('#hangman-image')
 const divsContainerEl = document.querySelector('.divs-container')
 const resetEl = document.querySelector('#reset-btn')
 const attemptsText = document.querySelector('#attempts-title')
-const popupEl = document.querySelector('#popup-container')
+const popupEl = document.querySelector('.popup-container')
 const popupTitle = document.querySelector('#popup-title')
 const popupParagraph = document.querySelector('#popup-paragraph')
+const restartbtn = document.querySelector('#restart')
 let divsContainerEls
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -134,10 +136,6 @@ function createWordOutput() {
                     divsContainerEls[i].appendChild(pEl)
                     gussedWord.push(event.target.textContent)
 
-                    console.log(`gussedWord ${gussedWord.length}`)
-                    console.log(`secert length ${secretWordLettersArray.length}`)
-
-
                     const DisableButton = event.target
                     DisableButton.disabled = true
 
@@ -157,9 +155,9 @@ function createWordOutput() {
                 } else if (lives === 1) {        
                     backgroundMusic.pause()
                     loseSound.play()
-                    attemptsText.textContent = `You Lose!`
+                    popupEl.classList = 'show-popup'
+                    popupTitle.textContent = 'You Lose!'
                     for (let i = 0; i < lettersBtns.length; i++) {
-                        console.log(lettersBtns[i])
                         lettersBtns[i].disabled = true
                         lettersBtns[i].style.backgroundColor = 'red'
                     }
@@ -171,8 +169,8 @@ function createWordOutput() {
 function winCheck() {
 
     if (gussedWord.length === secretWordLettersArray.length) {
-        console.log('You Won!')
-        
+        popupEl.classList = 'show-popup'
+        popupTitle.textContent = 'You Win!'
     }
 }
 
@@ -189,5 +187,8 @@ function addAudio(audioPath) {
 
 createWordOutput()
 resetEl.addEventListener('click', reset)
+
+restartbtn.addEventListener('click',reset) 
+
 
 
