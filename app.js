@@ -154,6 +154,7 @@ function createWordOutput() {
 
                 } else if (lives === 1) {        
                     backgroundMusic.pause()
+                    attemptsText.textContent= '0 attempts Left!'
                     loseSound.play()
                     popupEl.classList = 'show-popup'
                     popupTitle.textContent = 'You Lose!'
